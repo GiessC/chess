@@ -1,0 +1,42 @@
+@import 'variables';
+
+html, body, #root {
+    font-family: $font-stack;
+    padding: 0;
+    margin: 0;
+}
+
+.chessBoard {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: $chessBoardSize;
+    height: $chessBoardSize;
+
+    & .chessSquare {
+        width: calc($chessBoardSize / 8);
+        height: calc($chessBoardSize / 8);
+
+        &.white {
+            background-color: #FFF
+        }
+
+        &.black {
+            background-color: #93C572;
+            color: #FFF;
+        }
+
+        &.hasPiece {
+            cursor: pointer;
+        }
+    }
+}
+
+.chessPiece {
+    width: calc($chessBoardSize / 8);
+}
